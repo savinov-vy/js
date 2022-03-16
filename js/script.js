@@ -1,17 +1,21 @@
 "use strict";
 
-//alert('warning!!!');
+const numberOfFilms = +prompt("Сколько фильмов вы уже помотрели?", "");
 
-//let peremennay = confirm("are you ready?");
+let personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    private: false
+};
 
+const a = prompt('Один из последних просмотренных фильмов?', ''),
+      b = prompt('На сколько оцените его?',''),
+      c = prompt('Один из последних просмотренных фильмов?',''),
+      d = prompt('На сколько оцените его','');
 
-     //   console.log(peremennay);
+      personalMovieDB.movies[a] = b;
+      personalMovieDB.movies[c] = d;
 
-   //  const answer = prompt("Вам есть 18?", "18");
-
-  //   console.log(answer+5);
-  // document.write(answers);
-
-  const nameadf = prompt("Как вас зовут?");
-
-  alert(`Привет, ${nameadf}`);
+      console.log(personalMovieDB);
