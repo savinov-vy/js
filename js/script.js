@@ -1,36 +1,35 @@
 "use strict";
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже просмотрели?', '');
+let num = 20;
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    generes: [],
-    private: false
+showFirstMessage("Hello World");
+// function declaration - функции загружаеются вместе с переменными var до выполнения кода поэтому можно вызывать
+// функцию из любого места кода
+function showFirstMessage(text) {
+console.log(text);
+}
+
+showFirstMessage("Another text");
+
+//==========================================================================
+
+
+// function expression 
+// такая функция загружается как обычная переменная в процессе выполнения кода
+// поэтому нельзя её вызывать до объявления
+
+let calc = function (a, b) {
+    return a + b;
 };
 
-for (let i = 0; i < 2; i++) {
+console.log(calc(4, 5));
+ 
 
-    const a = prompt('Один из последних просмотренных фильмов', ''),
-        b = prompt('На сколько вы его оцените', '');
+//============================================================================
 
-    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+// стрелочные функции
+//
+//
+const anyFunc = (a, c) => {return a + c;};
 
-        personalMovieDB.movies[a] = b;
-        console.log('done');
-    } else {
-        alert("Назавание должно быть меньше 50 но больше 0 символов");
-        console.log('error');
-        i--;
-    }
-
-}
-
-if(personalMovieDB.count < 10) {
-    console.log('Просмотрено мало фильмов');
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-    console.log('Вы среднестатический зритель');
-} else if (personalMovieDB.count > 30) {
-    console.log('Фильмов очень много');
-}
+console.log(anyFunc(7, 9));
