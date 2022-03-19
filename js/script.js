@@ -1,50 +1,60 @@
 "use strict";
 
+const options = {
+    fieldName: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        borders: 'black',
+        bg: 'red'
+    },
+    makeTest: function() {
+        console.log('Hello test');
+    }
+};
+//==================
+// Методы в объекте
+options.makeTest();
 
-const str = "test";
+//===================
+// Деструктуризация объекта
 
-const arr = [1, 2, 4];
-
-console.log(str.length);
-console.log(arr.length);
-
-console.log(str[2]);
-
-//  str[2] = 'd';  //не сработает строка не изменяемая
-
-const newStr = str.toUpperCase();
-console.log(newStr);
-
-//=====================
-
-const fruit = "Some fruit";
-
-console.log(fruit.indexOf("fruit"));
-
-console.log(fruit.indexOf("q"));
-
-//===========  ВЫРЕЗАТЬ ЧАСТЬ СТРОКИ ===============
-
-const logg = 'Hello world';
-console.log(logg.slice(6,11));
-
-console.log(logg.slice(6)); // с 6 до конца
-
-console.log(logg.slice(-5, -1)); //начинаем с 5го с права заканчиваем 1 справа
-
-console.log(logg.substring(6, 11));     // похожа на slice не поддерживает отрицательные значения
-
-console.log(logg.substr(6, 5));  // с 6 ой позиции 5 символов вырезать
+const {borders, bg} = options.colors;
+console.log(borders);
 
 
 
-//
-// --------- ЧИСЛА ----------------
 
-const num = 12.2;
-console.log(Math.round(num));
+// console.log(options.name);
 
-const test = "12.2px";
-console.log(parseInt(test));  //можно вызывать на числах а можно как отдельную функцию
-console.log(parseFloat(test)); 
+// console.log(options['name']);
 
+// delete options.name;
+
+// console.log(options);
+
+
+// for in ====================
+
+let counter = 0;
+
+for (let key in options) {
+    if (typeof (options[key]) === 'object') {
+        for (let i in options[key]) {
+            console.log(`свойство вложенного объекта ${i} имеет значение ${options[key][i]}`);
+            counter++;
+        }
+    } else {
+
+        console.log(`свойство объекта ${key} имеет значение ${options[key]}`);
+
+        counter++;
+    }
+}
+
+console.log(counter);
+
+// метод получение ключей из объекта и их количества
+
+console.log(Object.keys(options));
+console.log(Object.keys(options).length);
