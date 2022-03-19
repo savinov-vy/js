@@ -1,50 +1,76 @@
 "use strict";
 
+let numberOfFilms;
 
-const str = "test";
+function start() {
+    do {
 
-const arr = [1, 2, 4];
+        numberOfFilms = +prompt('Сколько фильмов вы уже просмотрели?', '');
 
-console.log(str.length);
-console.log(arr.length);
+    } while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms));
+}
 
-console.log(str[2]);
+// start();
 
-//  str[2] = 'd';  //не сработает строка не изменяемая
+// rememberMyFilms();
 
-const newStr = str.toUpperCase();
-console.log(newStr);
+// detectPersonalLevel();
 
-//=====================
-
-const fruit = "Some fruit";
-
-console.log(fruit.indexOf("fruit"));
-
-console.log(fruit.indexOf("q"));
-
-//===========  ВЫРЕЗАТЬ ЧАСТЬ СТРОКИ ===============
-
-const logg = 'Hello world';
-console.log(logg.slice(6,11));
-
-console.log(logg.slice(6)); // с 6 до конца
-
-console.log(logg.slice(-5, -1)); //начинаем с 5го с права заканчиваем 1 справа
-
-console.log(logg.substring(6, 11));     // похожа на slice не поддерживает отрицательные значения
-
-console.log(logg.substr(6, 5));  // с 6 ой позиции 5 символов вырезать
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    generes: [],
+    private: false
+};
 
 
+showMyDb(personalMovieDB.private);
+writeYourGeneris();
 
-//
-// --------- ЧИСЛА ----------------
 
-const num = 12.2;
-console.log(Math.round(num));
+function showMyDb(hidden) {
+    if (!hidden) {
+        console.log(personalMovieDB);
+    }
+}
 
-const test = "12.2px";
-console.log(parseInt(test));  //можно вызывать на числах а можно как отдельную функцию
-console.log(parseFloat(test)); 
+function writeYourGeneris(){
+    for (let i = 1; i < 4; i++){
+       personalMovieDB.generes[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`, ``);
+    }
 
+}
+
+
+
+function rememberMyFilms() {
+    for (let i = 0; i < 2; i++) {
+
+        const a = prompt('Один из последних просмотренных фильмов', ''),
+            b = prompt('На сколько вы его оцените', '');
+
+        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+
+            personalMovieDB.movies[a] = b;
+            console.log('done');
+        } else {
+            alert("Назавание должно быть меньше 50 но больше 0 символов");
+            console.log('error');
+            i--;
+        }
+
+    }
+}
+
+
+function detectPersonalLevel() {
+
+    if (personalMovieDB.count < 10) {
+        console.log('Просмотрено мало фильмов');
+    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+        console.log('Вы среднестатический зритель');
+    } else if (personalMovieDB.count > 30) {
+        console.log('Фильмов очень много');
+    }
+}
