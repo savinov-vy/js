@@ -1,50 +1,39 @@
 "use strict";
 
+// const arr = [1, 2, 3, 6, 8];
 
-const str = "test";
+// // удалить элемент с конца массива
+// arr.pop();
 
-const arr = [1, 2, 4];
+// // добавить элемент в конец массива
+// arr.push(10);
 
-console.log(str.length);
-console.log(arr.length);
+// console.log(arr);
 
-console.log(str[2]);
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
 
-//  str[2] = 'd';  //не сработает строка не изменяемая
+// // для работы с массиво подобными структурами существует способ for of (имеет возможность использовать break или continue )
+// for (let value of arr) {
+//     console.log(value);
+// }
 
-const newStr = str.toUpperCase();
-console.log(newStr);
+// // call back функция выполнится строго после выполения forEach (лучше использовать его если не нужно использовать break или continue )
+// arr.forEach(function (item, i, arr) {
+// console.log(`${i}: ${item} внутри массива ${arr}`);
+// });
 
-//=====================
+// модифицирующие переборы arr.map / arr.reduce / arr.filter
+//==========================================================================
 
-const fruit = "Some fruit";
+// разбить строку на массив
 
-console.log(fruit.indexOf("fruit"));
+const str =  prompt("", "");
+const products = str.split(", ");
 
-console.log(fruit.indexOf("q"));
+console.log(products);
 
-//===========  ВЫРЕЗАТЬ ЧАСТЬ СТРОКИ ===============
-
-const logg = 'Hello world';
-console.log(logg.slice(6,11));
-
-console.log(logg.slice(6)); // с 6 до конца
-
-console.log(logg.slice(-5, -1)); //начинаем с 5го с права заканчиваем 1 справа
-
-console.log(logg.substring(6, 11));     // похожа на slice не поддерживает отрицательные значения
-
-console.log(logg.substr(6, 5));  // с 6 ой позиции 5 символов вырезать
-
-
-
-//
-// --------- ЧИСЛА ----------------
-
-const num = 12.2;
-console.log(Math.round(num));
-
-const test = "12.2px";
-console.log(parseInt(test));  //можно вызывать на числах а можно как отдельную функцию
-console.log(parseFloat(test)); 
+const out = products.join('; ');
+console.log(out + typeof(out));
 
