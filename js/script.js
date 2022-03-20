@@ -1,50 +1,81 @@
 "use strict";
 
+const numbers = {
+    a: 5,
+    b: 10,
+    c: {
+        x: 7,
+        y: 4
+    }
+};
 
-const str = "test";
+const newNumbers = copy(numbers);
 
-const arr = [1, 2, 4];
+newNumbers.a = 10;
 
-console.log(str.length);
-console.log(arr.length);
+console.log(newNumbers);
+console.log(numbers);
 
-console.log(str[2]);
+//поверхностная копирование объекта
+// внутренний объект по прежнему копируется по ссылке
+function copy(mainObj) {
+    let objCopy = {};
+    let key;
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+    return objCopy;
+}
+//===========================
+// поверхностная копия через соединение объектов
+const add = {
+    d: 17,
+    e: 20
+};
 
-//  str[2] = 'd';  //не сработает строка не изменяемая
+const numbers2 = {
+    a: 5,
+    b: 10,
+    c: {
+        x: 7,
+        y: 4
+    }
+};
+ 
+// соедениние объектов
+console.log(Object.assign(numbers2, add));
 
-const newStr = str.toUpperCase();
-console.log(newStr);
+// поверхностный клон через assign
+const clone = Object.assign({}, add);
+console.log(clone);
 
-//=====================
+//===== поверхностная копия массива
 
-const fruit = "Some fruit";
+const oldArray = [1, 2, 3, 4];
 
-console.log(fruit.indexOf("fruit"));
-
-console.log(fruit.indexOf("q"));
-
-//===========  ВЫРЕЗАТЬ ЧАСТЬ СТРОКИ ===============
-
-const logg = 'Hello world';
-console.log(logg.slice(6,11));
-
-console.log(logg.slice(6)); // с 6 до конца
-
-console.log(logg.slice(-5, -1)); //начинаем с 5го с права заканчиваем 1 справа
-
-console.log(logg.substring(6, 11));     // похожа на slice не поддерживает отрицательные значения
-
-console.log(logg.substr(6, 5));  // с 6 ой позиции 5 символов вырезать
+const newArray = oldArray.slice();
 
 
+//=================================
+// использовать spred оператор (оператор разворачивает содержимое массивов и объектов)
 
-//
-// --------- ЧИСЛА ----------------
+const video = ['youtube', 'vimeo', 'rutube'],
+      blogs = ['wordpress', 'livejournal', 'blogger'],
+      internet = [...video, ...blogs, 'vk', 'ya']; 
 
-const num = 12.2;
-console.log(Math.round(num));
+      console.log(internet);
 
-const test = "12.2px";
-console.log(parseInt(test));  //можно вызывать на числах а можно как отдельную функцию
-console.log(parseFloat(test)); 
+// поверхностная копия массива с помощью спред оператора
 
+const array = ['a', 'b'];
+
+const newArr = [...array];
+
+// поверхностная копия объекта с помощью спред опаратора
+
+const q = {
+    one: 1,
+    two: 2
+};
+
+const newObj = {...q};
