@@ -41,7 +41,7 @@ const numbers2 = {
         y: 4
     }
 };
-
+ 
 // соедениние объектов
 console.log(Object.assign(numbers2, add));
 
@@ -60,10 +60,10 @@ const newArray = oldArray.slice();
 // использовать spred оператор (оператор разворачивает содержимое массивов и объектов)
 
 const video = ['youtube', 'vimeo', 'rutube'],
-    blogs = ['wordpress', 'livejournal', 'blogger'],
-    internet = [...video, ...blogs, 'vk', 'ya'];
+      blogs = ['wordpress', 'livejournal', 'blogger'],
+      internet = [...video, ...blogs, 'vk', 'ya']; 
 
-console.log(internet);
+      console.log(internet);
 
 // поверхностная копия массива с помощью спред оператора
 

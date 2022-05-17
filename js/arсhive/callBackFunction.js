@@ -1,10 +1,10 @@
 "use strict";
 
 function first(){
-
+    
     setTimeout(function(){
-        console.log(1);
-    }, 200);
+    console.log(1);
+}, 200);
 }
 
 

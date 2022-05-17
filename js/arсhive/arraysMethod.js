@@ -61,7 +61,7 @@ console.log(num);
 
 function compareNum (a, b) {
     return a - b;
-}
+} 
 
 num.sort(compareNum);
 console.log(num);

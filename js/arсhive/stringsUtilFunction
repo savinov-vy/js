@@ -37,13 +37,3 @@ console.log(logg.substring(6, 11));     // похожа на slice не подд
 console.log(logg.substr(6, 5));  // с 6 ой позиции 5 символов вырезать
 
 
-
-//
-// --------- ЧИСЛА ----------------
-
-const num = 12.2;
-console.log(Math.round(num));
-
-const test = "12.2px";
-console.log(parseInt(test));  //можно вызывать на числах а можно как отдельную функцию
-console.log(parseFloat(test)); 
