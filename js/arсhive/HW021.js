@@ -66,3 +66,10 @@
         }
     }
  };
+ 
+
+
+ let soe = () => console.log("adsf");
+
+
+ soe();
