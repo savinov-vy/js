@@ -15,10 +15,13 @@ console.log(btns[0]);
 const circles = document.getElementsByClassName('circle');
 console.log(circles);
 
-
-// селектор из более поздних версий js. Явно не укзано по какому элементу ищем поэтому нужно указывать 
+//-----------------------------------------------------------------
+// селектор из более поздних версий js. Во внутрь скобок помещаем любой css селектор
+// ссылка на css селекторы https://learn.javascript.ru/css-selectors
+// имеет расширенный функционал поиска например по дочерним элементом или элементам справа
 // класс . или id # 
 // получаем псевдоколлекцию с одним методом forEach
+//
 const hearts = document.querySelectorAll('.heart');
 hearts.forEach(item => console.log(item));
 
