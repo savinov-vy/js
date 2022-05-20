@@ -39,8 +39,8 @@ console.log(out + typeof(out));
 
 
 // объединить элементы массива через разделитель
-const out = products.join('; ');
-console.log(out + ' as ' + typeof(out));
+/*const out = products.join('; ');
+console.log(out + ' as ' + typeof(out));*/
 
 //============= Сортировка массива =====================
 
