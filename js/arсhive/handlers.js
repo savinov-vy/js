@@ -28,3 +28,17 @@ const checkbox = document.querySelector('[type="checkbox"]'),
 document.addEventListener('DOMContentLoaded', () => {
 // здесь пишется выполняемый js код для страницы
 });
+
+// обработчик инпут
+const inputRub = document.querySelector('#inputRub'),
+      inputUsd = document.querySelector('#inputUds');
+
+inputRub.addEventListener('input', () => {
+    const request = new XMLHttpRequest();
+   // request.open(method, url, async, login, password);
+
+   request.open('GET', 'js/current.json');
+   request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+   request.send();
+
+});
