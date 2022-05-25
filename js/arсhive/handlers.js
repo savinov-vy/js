@@ -42,3 +42,17 @@ inputRub.addEventListener('input', () => {
    request.send();
 
 });
+
+    // закрытие модального окна при нажатии клавиши "Escape" keydown - нажатие клавиши
+    document.addEventListener('keydown', (e) => {
+        if (e.code === "Escape" && modal.classList.contains('show')) {
+            closeModal();
+        }
+    });
+
+// событие скролл мыши
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 1){  // -1 px это микро bug может событие может не сработать в некоторых браузерах
+            openModal();
+        }
+    });
