@@ -56,3 +56,20 @@ inputRub.addEventListener('input', () => {
             openModal();
         }
     });
+
+// событие input
+// input просиходит когда чтото вводится либо удаляется из input
+// похожее событие change
+inputRub.addEventListener('input', () => {
+    const request = new XMLHttpRequest();
+});
+
+
+// событие change
+// происходит когда кликаешь мышью мимо формы после заполнения формы
+inputRub.addEventListener('change', () => {
+    const request = new XMLHttpRequest();
+});
+
+// событие следит за изменением статуса readyState
+request.addEventListener('readystatechange', () => {}); 
