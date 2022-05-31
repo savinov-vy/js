@@ -141,7 +141,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const modalTimerId = setTimeout(openModal, 5000); // через 5 секунд вызывать модальное окно
+    //const modalTimerId = setTimeout(openModal, 5000); // через 5 секунд вызывать модальное окно
 
     function showModalByScroll(){
  //                                        -1 px это микро bug может событие может не сработать в некоторых браузерах
@@ -197,7 +197,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     new MenuCard (
-        "advanced_js/004_send_on_server/img/tabs/vegy.jpg",
+        "js_on_work/013_product_carts/Food/dist/img/tabs/vegy.jpg",
         "vegy",
         'Меню "Фитнес"',
         'Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
@@ -208,7 +208,7 @@ window.addEventListener('DOMContentLoaded', () => {
     ).render();
 
     new MenuCard (
-        "advanced_js/004_send_on_server/img/tabs/elite.jpg",
+        "js_on_work/013_product_carts/Food/dist/img/tabs/elite.jpg",
         "elite",
         'Меню "Премиум"',
         'В меню "Премиум" мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!',
@@ -218,7 +218,7 @@ window.addEventListener('DOMContentLoaded', () => {
     ).render();
 
     new MenuCard (
-        "advanced_js/004_send_on_server/img/tabs/post.jpg",
+        "js_on_work/013_product_carts/Food/dist/img/tabs/post.jpg",
         "post",
         'Меню "Постное"',
         'Меню "Постное" - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.',
@@ -342,4 +342,3 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         }
 });
-
