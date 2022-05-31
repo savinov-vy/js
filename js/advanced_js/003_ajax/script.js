@@ -10,7 +10,7 @@ inputRub.addEventListener('input', () => {
     // open - собирает настройки для осуществления запроса (не открывает канал между бэком и фронтом)
     // url формируется относительно html файла
     request.open('GET', 'advanced_js/003_ajax/host/current.json');      //request.open(method, url, async, login, password);
-    request.setRequestHeader('Content-type', 'application/json; charset=utf-8'); // headers необходимые для передачи json 
+    request.setRequestHeader('Content-Type', 'application/json; charset=utf-8'); // headers необходимые для передачи json 
     request.send(); // метод send может принимать body request.send(body);
 
     request.addEventListener('readystatechange', () => { // событие следит за изменением статуса запроса readyState
