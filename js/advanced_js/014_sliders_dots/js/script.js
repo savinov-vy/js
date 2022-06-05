@@ -379,12 +379,12 @@ const slides = document.querySelectorAll('.offer__slide'),
 
     next.addEventListener('click', () => {
  
-        if(offset == width.slice(0, width.length - 2) * (slides.length - 1)) { 
+        if(offset == deleteNotDigits(width) * (slides.length - 1)) { 
             // если слайд последний
             offset = 0;
         } else {
             // если слайд не последний
-            offset += +width.slice(0, width.length - 2);
+            offset += deleteNotDigits(width);
         }
 
         slidesField.style.transform = `translateX(-${offset}px)`;
@@ -408,14 +408,19 @@ const slides = document.querySelectorAll('.offer__slide'),
         dots[slideIndex - 1].style.opacity = 1;
     });
 
+    // функция удаления из строки цифры
+    function deleteNotDigits(str) {
+        return +str.replace(/\D/g, '');
+    }
+
     // движение назад
     prev.addEventListener('click', () => {
     if(offset == 0) { 
         // если слайд первый
-        offset = +width.slice(0, width.length - 2) * (slides.length - 1);
+        offset = +width.replace(/\D/g, '') * (slides.length - 1);
     } else {
         // если слайд не первый
-        offset -= +width.slice(0, width.length - 2);
+        offset -= +width.replace(/\D/g, '');
     }
     slidesField.style.transform = `translateX(-${offset}px)`;
 
@@ -442,7 +447,7 @@ const slides = document.querySelectorAll('.offer__slide'),
             const slideTo = e.target.getAttribute('data-slide-to');
 
             slideIndex = slideTo;
-            offset = +width.slice(0, width.length - 2) * (slideTo - 1);
+            offset = +width.replace(/\D/g, '') * (slideTo - 1);
 
             slidesField.style.transform = `translateX(-${offset}px)`;
 

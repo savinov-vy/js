@@ -407,12 +407,12 @@ const slides = document.querySelectorAll('.offer__slide'),
     next.addEventListener('click', () => {
         //if(offset == width * (slides.length - 1)) { //width='500px' нужно сделать числом и отрезать 'px'
         // мы это делаем
-        if(offset == width.slice(0, width.length - 2) * (slides.length - 1)) { 
+        if(offset == width.replace(/\D/g, '') * (slides.length - 1)) { // удалить все не числа (200px -> 200)
             // если слайд последний
             offset = 0;
         } else {
             // если слайд не последний
-            offset += +width.slice(0, width.length - 2);
+            offset += +width.replace(/\D/g, ''); // удалить все не числа (200px -> 200)
         }
 
         slidesField.style.transform = `translateX(-${offset}px)`;

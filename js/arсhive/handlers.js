@@ -65,7 +65,7 @@ inputRub.addEventListener('input', () => {
 });
 
 
-// событие change
+// событие change так же подходит для checkbox
 // происходит когда кликаешь мышью мимо формы после заполнения формы
 inputRub.addEventListener('change', () => {
     const request = new XMLHttpRequest();
